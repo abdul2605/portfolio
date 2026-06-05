@@ -236,6 +236,40 @@
       margin-bottom: 0.3rem;
     }
 
+    /* PROJECTS */
+    #projects { background: var(--bg); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .project-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+    .project-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .project-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .project-desc { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.2rem; line-height: 1.6; }
+    .project-bullets { list-style: none; margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .project-bullets li {
+      color: var(--muted); font-size: 0.83rem;
+      padding-left: 1rem; position: relative;
+    }
+    .project-bullets li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.75rem; top: 2px;
+    }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+
     /* CONTACT */
     #contact { background: var(--bg); }
     .contact-grid {
@@ -257,6 +291,37 @@
     .contact-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
     .contact-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
     .contact-value { font-size: 0.9rem; color: var(--text); font-weight: 500; margin-top: 0.2rem; }
+
+    /* CTA */
+    #cta {
+      background: var(--bg2);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .cta-inner {
+      max-width: 640px; margin: 0 auto;
+    }
+    .cta-roles {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      justify-content: center; margin-bottom: 1.8rem;
+    }
+    .cta-role {
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3);
+      color: var(--accent);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem; font-weight: 600;
+    }
+    .cta-tagline {
+      color: var(--muted); font-size: 1rem;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+    .cta-connect {
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--text); margin-bottom: 1.8rem;
+    }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* FOOTER */
     footer {
@@ -283,6 +348,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -295,8 +361,8 @@
       <h1>Abdul Subhan</h1>
       <div class="hero-title">QA Automation Engineer</div>
       <p class="hero-desc">
-        10+ years delivering quality across mobile, web, and API platforms.
-        Building scalable test automation frameworks with Java, Python, Selenium, Appium &amp; Playwright.
+        10+ years of experience designing and implementing scalable test automation solutions across mobile, web, and API platforms.
+        Specialized in Java, Selenium, Appium, Playwright, REST Assured, and CI/CD automation, with a proven track record of improving test coverage, accelerating release cycles, and delivering high-quality software.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -396,60 +462,52 @@
             <span class="tag blue">Java</span>
             <span class="tag blue">Python</span>
             <span class="tag blue">Groovy</span>
+            <span class="tag blue">SQL</span>
           </div>
         </div>
         <div class="skill-card">
-          <div class="skill-card-title">Frameworks &amp; Libraries</div>
+          <div class="skill-card-title">Test Automation</div>
           <div class="tags">
             <span class="tag green">Selenium WebDriver</span>
             <span class="tag green">Appium</span>
-            <span class="tag green">TestNG</span>
-            <span class="tag green">REST Assured</span>
-            <span class="tag green">Cucumber/BDD</span>
             <span class="tag green">Playwright</span>
+            <span class="tag green">TestNG</span>
+            <span class="tag green">Cucumber</span>
           </div>
         </div>
         <div class="skill-card">
-          <div class="skill-card-title">Tools</div>
+          <div class="skill-card-title">API Testing</div>
+          <div class="tags">
+            <span class="tag green">REST Assured</span>
+            <span class="tag green">Postman</span>
+            <span class="tag green">SoapUI</span>
+            <span class="tag green">Proxyman</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">CI/CD &amp; DevOps</div>
+          <div class="tags">
+            <span class="tag">Jenkins</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Test Management</div>
           <div class="tags">
             <span class="tag">Jira</span>
             <span class="tag">TestRail</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">Git/GitHub</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Postman</span>
-            <span class="tag">Proxyman</span>
-            <span class="tag">LambdaTest</span>
-            <span class="tag">SoapUI</span>
             <span class="tag">ServiceNow</span>
           </div>
         </div>
         <div class="skill-card">
-          <div class="skill-card-title">AI Tools</div>
+          <div class="skill-card-title">Cloud &amp; Platforms</div>
           <div class="tags">
-            <span class="tag blue">GitHub Copilot</span>
-            <span class="tag blue">Claude AI</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card-title">Platforms</div>
-          <div class="tags">
-            <span class="tag">iOS</span>
-            <span class="tag">Android</span>
-            <span class="tag">Amazon AWS</span>
-            <span class="tag">Set-Top Box</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card-title">Testing Types</div>
-          <div class="tags">
-            <span class="tag green">Functional</span>
-            <span class="tag green">Regression</span>
-            <span class="tag green">API</span>
-            <span class="tag green">Mobile</span>
-            <span class="tag green">Performance</span>
-            <span class="tag green">Smoke</span>
-            <span class="tag green">End-to-End</span>
+            <span class="tag blue">AWS</span>
+            <span class="tag blue">LambdaTest</span>
+            <span class="tag blue">Android</span>
+            <span class="tag blue">iOS</span>
           </div>
         </div>
       </div>
@@ -475,8 +533,8 @@
             <div class="timeline-date">Sep 2022 – May 2026</div>
           </div>
           <ul class="timeline-bullets">
-            <li>Increased automated test coverage by 40% across 6+ release cycles annually.</li>
-            <li>Executed 500+ test cases per sprint across iOS &amp; Android using Appium, 95%+ defect detection rate.</li>
+            <li>Increased automated test coverage by 40%, reducing manual regression effort and improving release confidence across multiple annual release cycles.</li>
+            <li>Executed and automated 500+ test cases per sprint across iOS and Android platforms, achieving a defect detection rate exceeding 95%.</li>
             <li>Managed 1,000+ test cases in TestRail across a team of 8 engineers.</li>
             <li>Leveraged GitHub Copilot &amp; Claude AI for test script generation and failure analysis.</li>
             <li>Conducted API automation using REST Assured, Postman, and Proxyman.</li>
@@ -577,6 +635,58 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Featured Projects</div>
+        <h2>What I've Built</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon">📱</div>
+          <div class="project-title">Mobile Automation Framework</div>
+          <p class="project-desc">Developed a scalable Appium-based mobile automation framework using Java and TestNG for iOS and Android applications.</p>
+          <ul class="project-bullets">
+            <li>Page Object Model implementation</li>
+            <li>Parallel execution support</li>
+            <li>CI/CD integration with Jenkins</li>
+            <li>Automated regression and smoke suites</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tag blue">Java</span>
+            <span class="tag blue">Appium</span>
+            <span class="tag blue">TestNG</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">iOS</span>
+            <span class="tag">Android</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🔌</div>
+          <div class="project-title">API Automation Framework</div>
+          <p class="project-desc">Designed a REST Assured automation framework for API validation and regression testing.</p>
+          <ul class="project-bullets">
+            <li>Request/response validation</li>
+            <li>Data-driven testing</li>
+            <li>Maven integration</li>
+            <li>Automated reporting</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tag blue">Java</span>
+            <span class="tag blue">REST Assured</span>
+            <span class="tag">Maven</span>
+            <span class="tag">TestNG</span>
+            <span class="tag green">API Testing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -608,6 +718,25 @@
           <div class="contact-label">Location</div>
           <div class="contact-value">Edmonton, Alberta, Canada</div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-inner">
+      <div class="cta-roles">
+        <span class="cta-role">QA Automation Engineer</span>
+        <span class="cta-role">SDET</span>
+        <span class="cta-role">Software Quality Engineering</span>
+      </div>
+      <p class="cta-tagline">
+        Interested in discussing automation, testing strategy, or potential collaboration?
+      </p>
+      <div class="cta-connect">Let's connect.</div>
+      <div class="cta-btns">
+        <a href="mailto:abdul.telus@gmail.com" class="btn btn-primary">Send an Email</a>
+        <a href="https://www.linkedin.com/in/abdul-subhan-19558a412/" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
       </div>
     </div>
   </section>
